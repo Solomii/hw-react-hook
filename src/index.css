@@ -33,7 +33,16 @@ h1 {
 }
 
 button {
-  
+  margin-left: 20px;
+}
+
+.login_page {
+ text-align: center;
+ margin-top: 50px;
+}
+
+.profile_page {
+  text-align: center;
 }
 
 .active {

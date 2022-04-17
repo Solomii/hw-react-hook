@@ -9,12 +9,12 @@ export const LoginPage = () => {
 
   const handleLogin = () => {
     auth.login(user)
-    navigate('/')
+    navigate('/profile')
   }
 
   return (
-    <div>
-      <input type="text" onChange={(e) => setUser(e.target.value)} />
+    <div className="login_page">
+      <input type="text" placeholder="Enter name..." onChange={(e) => setUser(e.target.value)} />
       <button onClick={handleLogin}>Login</button>
     </div>
   )
