@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 const BlogsPage = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
-  const urlPosts = 'https://jsonplaceholder.typicode.com/posts';
+  const urlPosts = 'https://gorest.co.in/public/v2/posts';
   
   useEffect(() => {
     fetch(urlPosts)
@@ -23,11 +23,11 @@ const BlogsPage = () => {
     return (
       <div>
         <h1>Blogs Page</h1>
-        <ul>
+        <ol>
         {posts.map(post => (
           <li key={post.id}>{post.title}</li>
         ))}
-        </ul>
+        </ol>
       </div>
     )
   }

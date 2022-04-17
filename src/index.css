@@ -32,7 +32,12 @@ h1 {
  text-align: center; 
 }
 
+button {
+  
+}
+
 .active {
   color: mediumblue;
   cursor: default;
 }
+
