@@ -29,13 +29,9 @@ const HomePage = () => {
       return user.name.toLowerCase().includes(search.toLocaleLowerCase());
     })
     , [search, users]);
- 
-  useEffect(() => {
-      // console.log("render");
-  })
 
   return (
-    <div>
+    <div className="home_page">
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
       <button onClick={handleAdd}>Add</button>
