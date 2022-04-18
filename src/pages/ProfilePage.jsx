@@ -13,7 +13,7 @@ export const Profile = () => {
   return (
     <div className="profile_page">
       <h1>Welcome {auth.user}</h1>
-      <button onClick={handleLogout}>Logout</button>
+      <button  onClick={handleLogout}>Logout</button>
     </div>
   
   )
