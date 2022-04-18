@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { HomePageList } from "../page/PageHomeList";
 
 const HomePage = () => {
@@ -12,9 +12,13 @@ const HomePage = () => {
   const [search, setSearch] = useState("");
 
   const handleAdd = () => {
-    const newUser = { id: Date.now(), name: text }
-    setUsers([...users, newUser])
-  }
+    const newUser = { id: Date.now(), name: text };
+    setUsers([...users, newUser]);
+  };
+
+  const handleDelete = useCallback((userId) => {
+    setUsers(users.filter(user => user.id !== userId));
+  }, [users]);
 
   const handleSearch = () => {
     setSearch(text);
@@ -22,8 +26,7 @@ const HomePage = () => {
 
   const filterUsers = useMemo(() =>
     users.filter((user) => {
-      console.log('filter obj')
-      return user.name.toLowerCase().includes(search.toLocaleLowerCase())
+      return user.name.toLowerCase().includes(search.toLocaleLowerCase());
     })
     , [search, users]);
  
@@ -36,7 +39,7 @@ const HomePage = () => {
       <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
       <button onClick={handleAdd}>Add</button>
-      <HomePageList users={filterUsers}/>
+      <HomePageList users={filterUsers} handleDelete={handleDelete}/>
     </div>
   )
 }

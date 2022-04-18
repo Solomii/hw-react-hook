@@ -1,13 +1,16 @@
 import React, { memo, useEffect } from "react";
 
-const HomePageItem = memo(({ user }) => {
+const HomePageItem = memo(({ user, handleDelete }) => {
   useEffect(() => {
-    console.log("Item render")
+    console.log("Item render" + user.name)
   });
 
   return (
     <li>
       {user.name}
+      <button onClick={() => handleDelete(user.id)}>
+        Delete
+      </button>
     </li>
   )
 

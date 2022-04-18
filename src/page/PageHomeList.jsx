@@ -3,7 +3,7 @@ import { HomePageItem } from "./PageHomeItems";
 
 
 
-const HomePageList = memo(({ users }) => {
+const HomePageList = memo(({ users, handleDelete }) => {
   useEffect(() => {
     console.log("list render")
   });
@@ -11,7 +11,7 @@ const HomePageList = memo(({ users }) => {
   return (
     <ul>
       {users.map(user => (
-        <HomePageItem key={user.id} user={user}/>
+        <HomePageItem key={user.id} user={user} handleDelete={ handleDelete}/>
       ))}
     </ul>
   )
