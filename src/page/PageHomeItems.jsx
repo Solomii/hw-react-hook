@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 
 const HomePageItem = memo(({ user, handleDelete }) => {
   return (
@@ -9,7 +9,6 @@ const HomePageItem = memo(({ user, handleDelete }) => {
       </button>
     </li>
   )
-
 })
 
 export { HomePageItem };

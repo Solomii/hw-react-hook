@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { HomePageList } from "../page/PageHomeList";
 
 const HomePage = () => {
@@ -32,9 +32,13 @@ const HomePage = () => {
 
   return (
     <div className="home_page">
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
-      <button onClick={handleAdd}>Add</button>
+      <div>
+       <input type="text" placeholder="enter name" value={text} onChange={(e) => setText(e.target.value)} />
+        <button onClick={handleSearch}>Search</button>
+        <button className="home_page_button_add" onClick={handleAdd}>Add</button>
+      </div>
+      <br />
+      <br />
       <HomePageList users={filterUsers} handleDelete={handleDelete}/>
     </div>
   )

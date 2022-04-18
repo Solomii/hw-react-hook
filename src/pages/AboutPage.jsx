@@ -2,7 +2,7 @@ import React, {useReducer} from "react"
  
  export const AboutPage = () => {
    const initialState = 0;
-   
+
    const reducer = (state, action) => {
     switch (action) {
       case 'increase':
@@ -19,7 +19,7 @@ import React, {useReducer} from "react"
    const [count, dispatch] = useReducer(reducer, initialState);
    
   return (
-    <div>
+    <div className="about_page">
       <h1>About useReducer</h1>
       <h2>{ count }</h2>
       <button onClick={()=>dispatch('increase')}>Increase(+)</button>
