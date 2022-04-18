@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { HomePageList } from "../page/PageHomeList";
 
 const HomePage = () => {
@@ -20,10 +20,13 @@ const HomePage = () => {
     setSearch(text);
   }
 
-  const filterUsers = users.filter((user) => (
-    user.name.toLowerCase().includes(text.toLocaleLowerCase())
-  )) 
-
+  const filterUsers = useMemo(() =>
+    users.filter((user) => {
+      console.log('filter obj')
+      return user.name.toLowerCase().includes(search.toLocaleLowerCase())
+    })
+    , [search, users]);
+ 
   useEffect(() => {
       // console.log("render");
   })
